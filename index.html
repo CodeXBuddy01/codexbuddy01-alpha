@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>We Are Launching Soon</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .time {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    .time span {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .time p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 1.8rem;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>We Are Launching Soon</h1>
+    <p>Our team is working hard to give you an amazing experience. Stay tuned!</p>
+    <div class="countdown">
+      <div class="time">
+        <span id="days">00</span>
+        <p>Days</p>
+      </div>
+      <div class="time">
+        <span id="hours">00</span>
+        <p>Hours</p>
+      </div>
+      <div class="time">
+        <span id="minutes">00</span>
+        <p>Minutes</p>
+      </div>
+      <div class="time">
+        <span id="seconds">00</span>
+        <p>Seconds</p>
+      </div>
+    </div>
+    <p>Connect with us on:</p>
+    <div class="social-icons">
+      <a href="https://x.com/CodeXBuddy01" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/codexbuddy01" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/codexbuddy01" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://api.whatsapp.com/send/?phone=7087964596&text=Hi+CodeXBuddy01+team%21+I%E2%80%99d+love+to+connect+and+I+want+to+know+more+about+you.+I+am+interested+in+your+services.&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.youtube.com/@CodeXBuddy01" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.threads.net/@codexbuddy01" target="_blank"><i class="fab fa-threads"></i></a>
+      <a href="https://github.com/codexbuddy01" target="_blank"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <footer>&copy; 2025 CodeXBuddy01 | All Rights Reserved.</footer>
+  </div>
+
+  <script>
+    const countdown = () => {
+      const launchDate = new Date("Jan 1, 2025 00:00:00").getTime();
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (distance % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        if (distance < 0) {
+          clearInterval(interval);
+          document.querySelector(".container").innerHTML = "<h1>We Are Live Now!</h1>";
+        }
+      }, 1000);
+    };
+
+    countdown();
+  </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
