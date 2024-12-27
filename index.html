@@ -81,12 +81,30 @@
       margin-top: 30px;
       font-size: 0.9rem;
     }
+
+    .announcement {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>We Are Launching Soon</h1>
+    <h1>🎉 We Are Launching Soon! 🎉</h1>
     <p>Our team is working hard to give you an amazing experience. Stay tuned!</p>
+
+    <!-- Announcement Section -->
+    <div class="announcement">
+      <h2>🎉 Soft Launching! 🎉</h2>
+      <p>This is a <strong>Soft Launching</strong> phase, and we are testing our platform. 🚀</p>
+      <p><strong>Final Hard Launch Date:</strong> January 1, 2025 🎯</p>
+      <p>Check out the countdown below for the big day!</p>
+    </div>
+
     <div class="countdown">
       <div class="time">
         <span id="days">00</span>
@@ -149,16 +167,13 @@
     countdown();
   </script>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3HX3EV6L0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3HX3EV6L0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-Z3HX3EV6L0');
-</script>
-
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    gtag('config', 'G-Z3HX3EV6L0');
+  </script>
 </body>
 </html>
